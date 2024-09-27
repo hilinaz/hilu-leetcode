@@ -1,10 +1,10 @@
 class Solution(object):
     def twoSum(self, nums, target):
-        val={}
-        for i, num in enumerate(nums):
-            add=  target-num
-            if add in val:
-                return([i,val[add]]) 
-            else:
-                val[num]=i
+        val = []
+        for i in range(len(nums)):
+            for j in range(i + 1, len(nums)):
+                if nums[i] + nums[j] == target:
+                    val.append(i)
+                    val.append(j)
+                    return val
         return []
