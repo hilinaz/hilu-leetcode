@@ -1,16 +1,19 @@
 class Solution(object):
     def sortedSquares(self, nums):
-        newarr=[]
-        i=0
-        j=len(nums)-1
-        while i<=j:
-            if nums[i]**2>=nums[j]**2:
-                newarr.append(nums[i]**2)
-                i+=1
-            else:
-                newarr.append(nums[j]**2)
-                j-=1
-        return newarr[::-1]
-            
+       newarr=[]
+       start=0
+       end=len(nums)-1
+       while start !=end:
+        if nums[start]**2>=nums[end]**2:
+            newarr.append(nums[start]**2)
+            start+=1
+        else:
+             newarr.append(nums[end]**2)
+             end-=1
+       newarr.append(nums[end]**2)
+       return newarr[::-1]
+        
+
+
 
 
